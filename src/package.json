@@ -1,0 +1,30 @@
+{
+  "name": "speedt-utils",
+  "version": "0.1.55",
+  "description": "speedt-utils",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "dependencies": {
+    "underscore": "1.8.3"
+  },
+  "devDependencies": {
+    "should": ">=0.0.1",
+    "mocha": ">=0.0.1",
+    "jscoverage": ">=0.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/speedt/speedt-utils.git"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "author": "speedt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/speedt/speedt-utils/issues"
+  },
+  "homepage": "https://github.com/speedt/speedt-utils"
+}
