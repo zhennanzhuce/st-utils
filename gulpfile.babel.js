@@ -1,6 +1,6 @@
 /*!
- * speedt-mysql
- * Copyright(c) 2014 speedt <13837186852@qq.com>
+ * st-utils
+ * Copyright(c) 2017 zhennanzhuce
  * MIT Licensed
  */
 'use strict';
