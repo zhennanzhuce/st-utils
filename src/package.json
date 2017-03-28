@@ -1,6 +1,6 @@
 {
   "name": "speedt-utils",
-  "version": "0.1.58",
+  "version": "0.1.67",
   "description": "speedt-utils",
   "main": "index.js",
   "scripts": {
