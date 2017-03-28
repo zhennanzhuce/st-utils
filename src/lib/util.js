@@ -6,7 +6,7 @@
 'use strict';
 
 (function(){
-  var root = this;
+  var root = this || {};
   var previousSpeedT = root.speedt;
 
   var _ = function(obj){
