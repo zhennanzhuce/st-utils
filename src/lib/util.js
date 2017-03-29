@@ -27,7 +27,7 @@
   _.size = function(obj){
     var count = 0;
     for(var i in obj){
-      if(obj.hasOwnProperty(i) && 'function' !== typeof obj[i]) count++;
+      if(this.hasOwnProperty(obj, i) && 'function' !== typeof obj[i]) count++;
     }
     return count;
   };
@@ -172,7 +172,14 @@
   })();
 
   _.removeObjKey = function(obj, key){
-    if(obj.hasOwnProperty(key)) delete obj[key];
+    if(this.hasOwnProperty(obj, key)) delete obj[key];
+  };
+
+  _.hasOwnProperty = function(obj, key){
+    if(obj.hasOwnProperty){
+      return obj.hasOwnProperty(key);
+    }
+    return Object.prototype.hasOwnProperty.call(obj, key);
   };
 
   /**
