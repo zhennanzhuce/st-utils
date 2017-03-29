@@ -5,8 +5,8 @@
  */
 'use strict';
 
-(function(){
-  var root = this || {};
+(function(window){
+  var root = window;
   var previousSpeedT = root.speedt;
 
   var _ = function(obj){
@@ -196,4 +196,4 @@
       return _;
     });
   }
-}.call(this));
+})('undefined' === typeof window ? {} : window);
