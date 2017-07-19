@@ -27,7 +27,7 @@
   _.size = function(obj){
     var count = 0;
     for(var i in obj){
-      if(this.hasOwnProperty(obj, i) && 'function' !== typeof obj[i]) count++;
+      if(obj.hasOwnProperty(i) && 'function' !== typeof obj[i]) count++;
     }
     return count;
   };
