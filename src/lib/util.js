@@ -32,11 +32,11 @@
     return count;
   };
 
-  _.padRight = function(str, char, len){
+  var padRight = _.padRight = function(str, char, len){
     return (str + Array(len).join(char)).slice(0, len);
   };
 
-  _.padLeft = function(str, char, len){
+  var padLeft = _.padLeft = function(str, char, len){
     var _str = (Array(len).join(char) + str);
     return _str.slice(_str.length - len);
   };
@@ -190,6 +190,33 @@
    */
   _.replaceAll = function(str, s, d){
     return str.replace(new RegExp(s, 'gm'), d);
+  };
+
+  /**
+   * 格式化日期
+   *
+   * @params
+   * @return
+   */
+  _.formatDate = function(date, format){
+    if(!date) return '';
+    date   = date   || new Date;
+    format = format || 'hh:mm:ss.S';
+    var o = {
+      'Y+':          date.getFullYear(),
+      'M+':  padLeft(date.getMonth() + 1,    '0', 2),  // month
+      'd+':  padLeft(date.getDate(),         '0', 2),  // day
+      'h+':  padLeft(date.getHours(),        '0', 2),  // hour
+      'm+':  padLeft(date.getMinutes(),      '0', 2),  // minute
+      's+':  padLeft(date.getSeconds(),      '0', 2),  // second
+       'S': padRight(date.getMilliseconds(), '0', 3)   // millisecond
+    }
+    for(var k in o){
+      if(new RegExp('('+ k +')').test(format)){
+        format = format.replace(RegExp.$1, o[k]);
+      }
+    }
+    return format;
   };
 
   _.noConflict = function(){
