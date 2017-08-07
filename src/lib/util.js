@@ -198,7 +198,7 @@
    * @params
    * @return
    */
-  _.formatDate = function(date, format){
+  _.formatDate = function(format, date){
     if(!date) return '';
     date   = date   || new Date;
     format = format || 'hh:mm:ss.S';
