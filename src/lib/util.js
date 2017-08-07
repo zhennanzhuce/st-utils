@@ -219,6 +219,22 @@
     return format;
   };
 
+  /**
+   * 数组转对象
+   *
+   * ['a', 1, 'b', 2] ==> { a: 1, b: 2 }
+   *
+   * @params
+   * @return
+   */
+  _.arrToObj = function(arr){
+    var obj = {};
+    for(var i=0, j=arr.length; i<j; i++){
+      obj[arr[i]] = arr[++i];
+    }
+    return obj;
+  };
+
   _.noConflict = function(){
     root.speedt = previousSpeedT;
     return this;

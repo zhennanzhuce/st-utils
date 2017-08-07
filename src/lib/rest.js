@@ -21,8 +21,6 @@ exports.genSeckey = function(){
   return this.genApikey();
 };
 
-
-
 exports.validate = function(data, seckey){
   let sign1 = data.signature;
   let sign2 = this.genSignature(data, seckey);
@@ -30,21 +28,17 @@ exports.validate = function(data, seckey){
   return sign1 === sign2;
 };
 
-
-
 exports.genSignature = function(data, seckey){
   // seckey = 'KFD85H9SmyZd8FSopX_CxxG5VgLFW71LiYc35PxZWXABX9BsANvPUQpLBCrPz25JpSy2_bt2Z0gWRCA6ePsKww';
   // data = 'apiKey=J4_EFO3ZlBZynJC7dACIFiivoCniAvJlLr-H_dIex-eAdyz1ykGgMtrvcJ7PBCrPKsJRuPaiRKdDuL5LTL_Jag&command=listAccounts&listAll=true&response=json';
 
   utils.removeObjKey(data, 'signature');
 
-  let arr = obj2Arr(data);
-
+  let arr  = obj2Arr(data);
   let sign = crypto.createHmac('sha1', seckey).update(arr.join('')).digest().toString('base64');
 
   return sign;
 };
-
 
 /**
  * 对象Key Value 转数组
@@ -53,7 +47,7 @@ exports.genSignature = function(data, seckey){
  * @return 新数组
  */
 const obj2Arr = obj => {
-  let keys = _.keys(obj);
+  let keys   = _.keys(obj);
   let sortBy = _.sortBy(keys, key => key);
 
   let arr = [];
