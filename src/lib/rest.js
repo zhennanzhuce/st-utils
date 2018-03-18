@@ -6,8 +6,8 @@
 'use strict';
 
 const crypto = require('crypto');
-const _ = require('underscore');
-const utils = require('./util');
+const _      = require('underscore');
+const util   = require('./util');
 
 var exports = module.exports;
 
@@ -32,7 +32,7 @@ exports.genSignature = function(data, seckey){
   // seckey = 'KFD85H9SmyZd8FSopX_CxxG5VgLFW71LiYc35PxZWXABX9BsANvPUQpLBCrPz25JpSy2_bt2Z0gWRCA6ePsKww';
   // data = 'apiKey=J4_EFO3ZlBZynJC7dACIFiivoCniAvJlLr-H_dIex-eAdyz1ykGgMtrvcJ7PBCrPKsJRuPaiRKdDuL5LTL_Jag&command=listAccounts&listAll=true&response=json';
 
-  utils.removeObjKey(data, 'signature');
+  util.removeObjKey(data, 'signature');
 
   let arr  = obj2Arr(data);
   let sign = crypto.createHmac('sha1', seckey).update(arr.join('')).digest().toString('base64');

@@ -6,6 +6,6 @@
 'use strict';
 
 exports.utils = require('./lib/util');
-exports.md5 = require('./lib/md5');
-exports.rest = require('./lib/rest');
-exports.ajax = require('./lib/ajax');
+exports.md5   = require('./lib/md5');
+exports.rest  = require('./lib/rest');
+exports.ajax  = require('./lib/ajax');
